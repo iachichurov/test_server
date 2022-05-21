@@ -10,12 +10,12 @@ def my_homepage():
 def html_page(page_name):
     return render_template(page_name)
 
-def write_to_file(data):  # function, writing data from form input to txt file
-    with open('database.txt', mode='a') as database:
-        email = data['email']
-        subject = data['subject']
-        message = data['message']
-        file = database.write(f'\n{email}, {subject}, {message}')
+# def write_to_file(data):  # function, writing data from form input to txt file
+#     with open('database.txt', mode='a') as database:
+#         email = data['email']
+#         subject = data['subject']
+#         message = data['message']
+#         file = database.write(f'\n{email}, {subject}, {message}')
 
 def write_to_csv(data):  # function, writing data from form input to csv file
     with open('database.csv', newline='', mode='a') as database2:
@@ -35,5 +35,5 @@ def submit_form():
             return redirect("/thankyou.html")
         except:
             return 'Did not save to database'
-        else:
-            return 'error, try again'
+    else:
+        return 'error, try again'
